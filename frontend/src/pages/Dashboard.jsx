@@ -13,7 +13,7 @@ function Dashboard() {
     };
 
     // Get Students
-    fetch("http://127.0.0.1:8000/api/students/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/students/`, {
       headers: headers,
     })
       .then((response) => response.json())
@@ -29,7 +29,7 @@ function Dashboard() {
       });
 
     // Get Marks
-    fetch("http://127.0.0.1:8000/api/marks/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/marks/`, {
       headers: headers,
     })
       .then((response) => response.json())
@@ -45,7 +45,7 @@ function Dashboard() {
       });
 
     // Get Attendance
-    fetch("http://127.0.0.1:8000/api/attendance/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/attendance/`, {
       headers: headers,
     })
       .then((response) => response.json())

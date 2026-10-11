@@ -15,8 +15,9 @@ function Attendance() {
       Authorization: `Token ${token}`,
     };
 
+    
     // Get Attendance
-    fetch("http://127.0.0.1:8000/api/attendance/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/attendance/`, {
       headers: headers,
     })
       .then((response) => response.json())
@@ -35,7 +36,7 @@ function Attendance() {
       });
 
     // Get Students
-    fetch("http://127.0.0.1:8000/api/students/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/students/`, {
       headers: headers,
     })
       .then((response) => response.json())
@@ -76,7 +77,7 @@ function Attendance() {
 
     const token = localStorage.getItem("token");
 
-    fetch("http://127.0.0.1:8000/api/attendance/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/attendance/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

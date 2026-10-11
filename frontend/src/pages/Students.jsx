@@ -25,7 +25,7 @@ function Students() {
   const fetchStudents = () => {
     setError("");
 
-    fetch("http://127.0.0.1:8000/api/students/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/students/`, {
       headers: {
         Authorization: `Token ${getToken()}`,
       },
@@ -88,8 +88,8 @@ function Students() {
     const token = getToken();
 
     const url = editingId
-      ? `http://127.0.0.1:8000/api/students/${editingId}/`
-      : "http://127.0.0.1:8000/api/students/";
+      ? `${import.meta.env.VITE_API_URL}/api/students/${editingId}/`
+      : `${import.meta.env.VITE_API_URL}/api/students/`;
 
     const method = editingId ? "PUT" : "POST";
 
@@ -174,7 +174,7 @@ function Students() {
     setSuccess("");
 
     fetch(
-      `http://127.0.0.1:8000/api/students/${id}/`,
+      `${import.meta.env.VITE_API_URL}/api/students/${id}/`,
       {
         method: "DELETE",
         headers: {

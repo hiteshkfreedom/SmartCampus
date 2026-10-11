@@ -17,7 +17,7 @@ function Marks() {
     };
 
     // Get Marks
-    fetch("http://127.0.0.1:8000/api/marks/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/marks/`, {
       headers: headers,
     })
       .then((response) => response.json())
@@ -36,7 +36,7 @@ function Marks() {
       });
 
     // Get Students
-    fetch("http://127.0.0.1:8000/api/students/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/students/`, {
       headers: headers,
     })
       .then((response) => response.json())
@@ -67,7 +67,7 @@ function Marks() {
 
     const token = localStorage.getItem("token");
 
-    fetch("http://127.0.0.1:8000/api/marks/", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/marks/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
