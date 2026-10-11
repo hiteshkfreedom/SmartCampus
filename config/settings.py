@@ -20,8 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY SETTINGS
 # --------------------------------------------------
 
-# Render will provide the production secret key.
-# The fallback is only for local development.
 SECRET_KEY = os.environ.get(
     "SECRET_KEY",
     "local-development-key-change-before-deployment"
@@ -29,7 +27,6 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = False
 
-# Set ALLOWED_HOSTS in Render's environment variables.
 ALLOWED_HOSTS = os.environ.get(
     "ALLOWED_HOSTS",
     "localhost,127.0.0.1"
@@ -100,8 +97,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 # DATABASE
 # --------------------------------------------------
 
-# Uses DATABASE_URL on Render (PostgreSQL).
-# Falls back to SQLite on your local laptop.
 DATABASES = {
     "default": dj_database_url.config(
         default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
@@ -180,11 +175,11 @@ MAILERS = {
 # CORS
 # --------------------------------------------------
 
-# Local React development addresses.
-# Add your deployed frontend URL here when available.
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
+    "https://smart-campus-6n5uee6t2-smart-campus6.vercel.app",
+    "https://smart-campus-three-zeta.vercel.app",
 ]
 
 
